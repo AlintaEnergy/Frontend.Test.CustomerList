@@ -2,7 +2,7 @@ import React from "react";
 import { render as rtlRender } from "@testing-library/react";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
-import { customerReducer } from "../redux/reducers/customerReducers";
+import customerReducer from "../redux/reducers/customerReducers";
 
 // @TODO clean up types here
 // Set-up copied from https://redux.js.org/recipes/writing-tests#components

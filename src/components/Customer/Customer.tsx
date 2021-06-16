@@ -7,7 +7,9 @@ import {
   StyledCustomerDelete,
   StyledCustomerInfo,
   StyledCustomerName,
+  StyledCustomerdob
 } from "./StyledCustomer";
+
 
 type Props = {
   customer: ICustomer;
@@ -23,16 +25,22 @@ export const Customer: React.FC<Props> = ({ customer, removeCustomer }) => {
   );
 
   return (
-    <StyledCustomer>
-      <StyledCustomerName>
-        {customer.firstName} {customer.lastName}
-      </StyledCustomerName>
-      <StyledCustomerInfo>
-        Phone number: {customer.phoneNumber}
-      </StyledCustomerInfo>
-      <StyledCustomerDelete onClick={() => deleteCustomer(customer)}>
-        Delete
-      </StyledCustomerDelete>
-    </StyledCustomer>
+      <StyledCustomer>
+        <StyledCustomerDelete onClick={() => deleteCustomer(customer)}>
+          Delete
+        </StyledCustomerDelete>
+      </StyledCustomer>
   );
 };
+
+
+
+{/* <StyledCustomerName>
+          {customer.firstName} {customer.lastName}
+        </StyledCustomerName>
+        <StyledCustomerInfo>
+          Phone number: {customer.phoneNumber}
+        </StyledCustomerInfo>
+        <StyledCustomerdob>
+          Date of Birth: {customer.dob}
+        </StyledCustomerdob> */}

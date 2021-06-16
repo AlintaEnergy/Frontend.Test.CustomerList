@@ -30,3 +30,9 @@ export const StyledAddButton = styled.button`
   border-radius: 4px;
   font-size: 16px;
 `;
+
+export const StyledError = styled.label`
+
+  color: red;
+
+`
