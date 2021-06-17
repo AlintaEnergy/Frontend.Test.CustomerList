@@ -8,21 +8,25 @@ export const initialState: CustomerState = {
       firstName: "Charles",
       lastName: "Babbage",
       phoneNumber: "0412 123 123",
+      birthDate: "13/06/2021",
     },
     {
       id: 2,
       firstName: "Alan",
       lastName: "Turing",
       phoneNumber: "(03) 9599 1234",
+      birthDate: "13/06/2021",
     },
     {
       id: 3,
       firstName: "Ada",
       lastName: "Lovelace",
       phoneNumber: "+61 423 345 567",
+      birthDate: "13/06/2021",
     },
   ],
 };
+
 
 export const customerReducer = (
   state: CustomerState = initialState,
@@ -35,6 +39,7 @@ export const customerReducer = (
         firstName: action.customer.firstName,
         lastName: action.customer.lastName,
         phoneNumber: action.customer.phoneNumber,
+        birthDate: action.customer.birthDate,
       };
       return {
         ...state,

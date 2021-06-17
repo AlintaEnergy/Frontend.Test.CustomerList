@@ -7,6 +7,7 @@ const customer = {
   firstName: "Test",
   lastName: "Tester",
   phoneNumber: "00000000",
+  birthDate: "13/06/2021",
 };
 
 describe("<Customer />", () => {

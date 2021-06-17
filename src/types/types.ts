@@ -2,6 +2,7 @@ export interface Customer {
   firstName: string;
   lastName: string;
   phoneNumber: string;
+  birthDate: string,
 }
 
 export interface ICustomer extends Customer {

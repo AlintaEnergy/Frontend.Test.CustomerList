@@ -5,6 +5,9 @@ import { AddCustomerForm } from "../components/AddCustomer/AddCustomerForm";
 import { Dispatch } from "redux";
 import { CustomerState, ICustomer } from "../types/types";
 import { addCustomer, removeCustomer } from "../redux/actions/customerActions";
+import {
+  Table,TableHead,TableHeadData
+} from "../StyledApp";
 
 const Home: React.FC = () => {
   const customers: readonly ICustomer[] = useSelector(
@@ -19,9 +22,19 @@ const Home: React.FC = () => {
     [dispatch]
   );
 
-  return (
+  return (    
     <>
       <AddCustomerForm saveCustomer={saveCustomer} />
+      <Table id="leaderboard_view" >
+    {/* <TableHead >Customers</TableHead>*/}
+    <p></p>
+    <tbody>
+      <tr>
+        <TableHeadData>Name</TableHeadData>
+        <TableHeadData>Phone Number</TableHeadData>
+        <TableHeadData>Date of Birth</TableHeadData>
+        <TableHeadData> </TableHeadData>
+      </tr >
       {customers.map((customer: ICustomer) => (
         <Customer
           key={customer.id}
@@ -29,8 +42,13 @@ const Home: React.FC = () => {
           removeCustomer={removeCustomer}
         />
       ))}
+        
+    </tbody>
+  </Table>
+      
     </>
   );
+
 };
 
 export default Home;

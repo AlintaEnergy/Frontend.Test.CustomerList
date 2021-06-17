@@ -26,3 +26,12 @@ export const StyledCustomerDelete = styled.button`
   border-radius: 4px;
   font-size: 16px;
 `;
+
+export const TableData = styled.td`
+  font-weight: 500;
+  font-size:20px;
+  border: 1px solid LightGrey;
+  height: 100%;
+  text-align: center;
+  vertical-align: middle;
+`;

@@ -23,3 +23,25 @@ export const StyledHeaderText = styled.h1`
   margin: 0;
   padding: 0;
 `;
+
+export const Table = styled.table`
+width: 100%;
+margin: 0;
+border-spacing: 0;
+border-collapse: collapse;
+`;
+
+export const TableHead = styled.thead`
+font-size: 40px;
+font-weight: bold;
+text-align: left;
+padding 2;
+`;
+export const TableHeadData = styled.td`
+font-size: 30px;
+font-weight:800;
+border: 1px solid LightGrey;
+height: 100%;
+text-align: center;
+vertical-align: middle;
+`;
