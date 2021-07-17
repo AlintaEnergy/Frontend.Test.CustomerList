@@ -1,7 +1,58 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Customer /> should render a <Customer /> 1`] = `
+exports[`<Home /> should render a <Home /> 1`] = `
 <div>
+  <form
+    action="#"
+    class="sc-gKAaRy byIIAQ"
+  >
+    <label
+      class="sc-iCoGMd kTOdHT"
+      for="firstName"
+    >
+      First Name *
+    </label>
+    <input
+      class="sc-fujyAs byvWZq"
+      id="firstName"
+      name="firstName"
+      placeholder="John"
+      value=""
+    />
+    <label
+      class="sc-iCoGMd kTOdHT"
+      for="lastName"
+    >
+      Last Name *
+    </label>
+    <input
+      class="sc-fujyAs byvWZq"
+      id="lastName"
+      name="lastName"
+      placeholder="Doe"
+      value=""
+    />
+    <label
+      class="sc-iCoGMd kTOdHT"
+      for="phoneNumber"
+    >
+      Phone Number *
+    </label>
+    <input
+      class="sc-fujyAs byvWZq"
+      id="phoneNumber"
+      name="phoneNumber"
+      placeholder="0400000000"
+      type="tel"
+      value=""
+    />
+    <button
+      class="sc-pNWdM jwsycl"
+      type="submit"
+    >
+      Add Customer
+    </button>
+  </form>
   <div
     class="sc-bdnxRM dqByRi"
   >
@@ -51,17 +102,17 @@ exports[`<Customer /> should render a <Customer /> 1`] = `
           <td
             class="sc-eCApnc bgLJTS"
           >
-            John
+            Charles
           </td>
           <td
             class="sc-eCApnc bgLJTS"
           >
-            Doe
+            Babbage
           </td>
           <td
             class="sc-eCApnc bgLJTS"
           >
-            0410000000
+            0412 123 123
           </td>
           <td
             class="sc-eCApnc bgLJTS"
@@ -84,17 +135,50 @@ exports[`<Customer /> should render a <Customer /> 1`] = `
           <td
             class="sc-eCApnc bgLJTS"
           >
-            David
+            Alan
           </td>
           <td
             class="sc-eCApnc bgLJTS"
           >
-            Smith
+            Turing
           </td>
           <td
             class="sc-eCApnc bgLJTS"
           >
-            0410000000
+            (03) 9599 1234
+          </td>
+          <td
+            class="sc-eCApnc bgLJTS"
+          >
+            <button
+              class="sc-jSFjdj glHaqL"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+        <tr
+          class="sc-hKFxyN kUEvVU"
+        >
+          <td
+            class="sc-eCApnc bgLJTS"
+          >
+            3
+          </td>
+          <td
+            class="sc-eCApnc bgLJTS"
+          >
+            Ada
+          </td>
+          <td
+            class="sc-eCApnc bgLJTS"
+          >
+            Lovelace
+          </td>
+          <td
+            class="sc-eCApnc bgLJTS"
+          >
+            +61 423 345 567
           </td>
           <td
             class="sc-eCApnc bgLJTS"

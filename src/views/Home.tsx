@@ -22,13 +22,7 @@ const Home: React.FC = () => {
   return (
     <>
       <AddCustomerForm saveCustomer={saveCustomer} />
-      {customers.map((customer: ICustomer) => (
-        <Customer
-          key={customer.id}
-          customer={customer}
-          removeCustomer={removeCustomer}
-        />
-      ))}
+      <Customer customers={customers} removeCustomer={removeCustomer} />
     </>
   );
 };

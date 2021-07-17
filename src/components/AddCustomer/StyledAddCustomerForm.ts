@@ -29,4 +29,18 @@ export const StyledAddButton = styled.button`
   border: none;
   border-radius: 4px;
   font-size: 16px;
+
+  :hover {
+    cursor: pointer;
+  }
+
+  ${({ disabled }) => disabled && `
+  background: #bbc0c4;
+`}
+`;
+
+export const StyledInvalidDiv = styled.div`
+  color: red;
+  font-size: 12px;
+  margin: -13px 0 12px 0;
 `;

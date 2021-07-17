@@ -1,28 +1,58 @@
 import styled from "styled-components";
 
-export const StyledCustomer = styled.div`
-  box-sizing: border-box;
-  min-width: 100%;
-  border: 1px solid #ccc;
-  margin: 1rem;
-  padding: 1rem;
+export const StyledTableContainer = styled.div`
+  overflow: auto;
+  height: 428px;
+  width: 100%;
+  margin-top: 25px;
 `;
 
-export const StyledCustomerName = styled.h2`
-  margin: 0 0 0.5rem;
-  padding: 0;
+export const StyledTable = styled.table`
+  text-align: center;
+  border-collapse: collapse;
+  width: 100%;
 `;
 
-export const StyledCustomerInfo = styled.p`
-  margin: 0 0 0.5rem;
-  padding: 0;
+export const StyledTableHeader = styled.th`
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: center;
+  background-color: #0479cd;
+  color: white;
+  font-weight: bold;
+`;
+
+export const StyledTableRow = styled.tr`
+  border: 1px solid #ddd;
+  padding: 8px;
+
+  :nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  :hover {
+    background-color: #ddd;
+  }
+`;
+
+export const StyledTableRowItem = styled.td`
+  border: 1px solid #ddd;
+  padding: 8px;
 `;
 
 export const StyledCustomerDelete = styled.button`
-  padding: 1rem;
+  padding: 0.7rem;
   background-color: #dc1616;
   color: white;
   border: none;
   border-radius: 4px;
-  font-size: 16px;
+  font-size: 13px;
+  font-weight: bold;
+
+  :hover {
+    cursor: pointer;
+  }
 `;

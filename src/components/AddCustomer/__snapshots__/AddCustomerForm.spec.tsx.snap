@@ -10,7 +10,7 @@ exports[`<AddCustomerForm /> should render a <AddCustomerForm /> 1`] = `
       class="sc-gtsrHT bmgxMS"
       for="firstName"
     >
-      First Name
+      First Name *
     </label>
     <input
       class="sc-dlnjwi fstXny"
@@ -23,7 +23,7 @@ exports[`<AddCustomerForm /> should render a <AddCustomerForm /> 1`] = `
       class="sc-gtsrHT bmgxMS"
       for="lastName"
     >
-      Last Name
+      Last Name *
     </label>
     <input
       class="sc-dlnjwi fstXny"
@@ -36,18 +36,18 @@ exports[`<AddCustomerForm /> should render a <AddCustomerForm /> 1`] = `
       class="sc-gtsrHT bmgxMS"
       for="phoneNumber"
     >
-      Phone Number
+      Phone Number *
     </label>
     <input
       class="sc-dlnjwi fstXny"
       id="phoneNumber"
       name="phoneNumber"
-      placeholder="john@acme.com"
+      placeholder="0400000000"
       type="tel"
       value=""
     />
     <button
-      class="sc-hKFxyN jrRSci"
+      class="sc-hKFxyN hyZDvf"
       type="submit"
     >
       Add Customer
