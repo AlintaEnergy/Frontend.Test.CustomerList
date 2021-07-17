@@ -1,6 +1,6 @@
 import * as React from "react";
 import { render } from "../utils/testUtils";
-import  Home  from "./Home";
+import Home from "./Home";
 
 describe("<Home />", () => {
   test("should render a <Home />", () => {

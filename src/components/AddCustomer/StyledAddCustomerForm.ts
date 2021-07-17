@@ -34,7 +34,9 @@ export const StyledAddButton = styled.button`
     cursor: pointer;
   }
 
-  ${({ disabled }) => disabled && `
+  ${({ disabled }) =>
+    disabled &&
+    `
   background: #bbc0c4;
 `}
 `;

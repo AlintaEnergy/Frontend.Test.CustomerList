@@ -15,7 +15,7 @@ describe("<AddCustomerForm />", () => {
     );
 
     userEvent.click(getByRole("button", { name: /add customer/i }));
-    
+
     await waitFor(() => {
       expect(getByTestId("firstName-error")).not.toBe(null);
       expect(getByTestId("lastName-error")).not.toBe(null);
