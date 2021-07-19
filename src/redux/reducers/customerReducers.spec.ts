@@ -8,18 +8,21 @@ const initialState = {
       id: 1,
       lastName: "Babbage",
       phoneNumber: "0412 123 123",
+      dateOfBirth: "1990/01/01",
     },
     {
       firstName: "Alan",
       id: 2,
       lastName: "Turing",
       phoneNumber: "(03) 9599 1234",
+      dateOfBirth: "1990/01/01",
     },
     {
       firstName: "Ada",
       id: 3,
       lastName: "Lovelace",
       phoneNumber: "+61 423 345 567",
+      dateOfBirth: "1990/01/01",
     },
   ],
 };
@@ -40,6 +43,7 @@ describe("customer reducer", () => {
           id: 1,
           lastName: "Dummy",
           phoneNumber: "000 000 000",
+          dateOfBirth: "1990/01/01",
         },
       })
     ).toEqual({
@@ -49,6 +53,7 @@ describe("customer reducer", () => {
           id: 1,
           lastName: "Dummy",
           phoneNumber: "000 000 000",
+          dateOfBirth: "1990/01/01",
         },
       ],
     });
@@ -63,6 +68,7 @@ describe("customer reducer", () => {
           id: 1,
           lastName: "Babbage",
           phoneNumber: "0412 123 123",
+          dateOfBirth: "1990/01/01",
         },
       })
     ).toEqual({
@@ -72,12 +78,14 @@ describe("customer reducer", () => {
           id: 2,
           lastName: "Turing",
           phoneNumber: "(03) 9599 1234",
+          dateOfBirth: "1990/01/01",
         },
         {
           firstName: "Ada",
           id: 3,
           lastName: "Lovelace",
           phoneNumber: "+61 423 345 567",
+          dateOfBirth: "1990/01/01",
         },
       ],
     });
