@@ -19,7 +19,7 @@ exports[`<Customer /> should render a <Customer /> 1`] = `
       00000000
     </p>
     <button
-      class="sc-hKFxyN dwHgfV"
+      class="sc-hKFxyN fMdrYX"
     >
       Delete
     </button>

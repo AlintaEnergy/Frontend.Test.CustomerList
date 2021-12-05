@@ -29,4 +29,9 @@ export const StyledAddButton = styled.button`
   border: none;
   border-radius: 4px;
   font-size: 16px;
+  cursor: pointer;
+`;
+
+export const StyledErrorMessage = styled.span`
+  color: red;
 `;

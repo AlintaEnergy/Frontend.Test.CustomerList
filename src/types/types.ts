@@ -5,7 +5,7 @@ export interface Customer {
 }
 
 export interface ICustomer extends Customer {
-  id: number;
+  id: string;
 }
 
 export type CustomerState = {
