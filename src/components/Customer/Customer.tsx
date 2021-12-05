@@ -11,17 +11,10 @@ import {
 
 type Props = {
   customer: ICustomer;
-  removeCustomer: (customer: ICustomer) => void;
+  deleteCustomer: (customer: ICustomer) => void;
 };
 
-export const Customer: React.FC<Props> = ({ customer, removeCustomer }) => {
-  const dispatch: Dispatch<any> = useDispatch();
-
-  const deleteCustomer = React.useCallback(
-    (customer: ICustomer) => dispatch(removeCustomer(customer)),
-    [dispatch, removeCustomer]
-  );
-
+export const Customer: React.FC<Props> = ({ customer, deleteCustomer }) => {
   return (
     <StyledCustomer>
       <StyledCustomerName>

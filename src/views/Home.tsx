@@ -19,6 +19,11 @@ const Home: React.FC = () => {
     [dispatch]
   );
 
+  const deleteCustomer = React.useCallback(
+    (customer: ICustomer) => dispatch(removeCustomer(customer)),
+    [dispatch]
+  );
+
   return (
     <>
       <AddCustomerForm saveCustomer={saveCustomer} />
@@ -26,7 +31,7 @@ const Home: React.FC = () => {
         <Customer
           key={customer.id}
           customer={customer}
-          removeCustomer={removeCustomer}
+          deleteCustomer={deleteCustomer}
         />
       ))}
     </>

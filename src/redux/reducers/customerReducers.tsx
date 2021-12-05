@@ -38,7 +38,7 @@ export const customerReducer = (
       };
       return {
         ...state,
-        customers: state.customers.concat(newCustomer),
+        customers: [...state.customers, newCustomer],
       };
     case REMOVE_CUSTOMER:
       const updatedCustomers: ICustomer[] = state.customers.filter(
