@@ -5,19 +5,19 @@ const initialState = {
   customers: [
     {
       firstName: "Charles",
-      id: 1,
+      id: "1",
       lastName: "Babbage",
       phoneNumber: "0412 123 123",
     },
     {
       firstName: "Alan",
-      id: 2,
+      id: "2",
       lastName: "Turing",
       phoneNumber: "(03) 9599 1234",
     },
     {
       firstName: "Ada",
-      id: 3,
+      id: "3",
       lastName: "Lovelace",
       phoneNumber: "+61 423 345 567",
     },
@@ -37,7 +37,7 @@ describe("customer reducer", () => {
         type: ADD_CUSTOMER,
         customer: {
           firstName: "Test",
-          id: 1,
+          id: "1",
           lastName: "Dummy",
           phoneNumber: "000 000 000",
         },
@@ -46,7 +46,7 @@ describe("customer reducer", () => {
       customers: [
         {
           firstName: "Test",
-          id: 1,
+          id: "1",
           lastName: "Dummy",
           phoneNumber: "000 000 000",
         },
@@ -60,7 +60,7 @@ describe("customer reducer", () => {
         type: REMOVE_CUSTOMER,
         customer: {
           firstName: "Charles",
-          id: 1,
+          id: "1",
           lastName: "Babbage",
           phoneNumber: "0412 123 123",
         },
@@ -69,13 +69,13 @@ describe("customer reducer", () => {
       customers: [
         {
           firstName: "Alan",
-          id: 2,
+          id: "2",
           lastName: "Turing",
           phoneNumber: "(03) 9599 1234",
         },
         {
           firstName: "Ada",
-          id: 3,
+          id: "3",
           lastName: "Lovelace",
           phoneNumber: "+61 423 345 567",
         },

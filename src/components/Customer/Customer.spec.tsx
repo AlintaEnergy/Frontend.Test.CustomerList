@@ -1,9 +1,10 @@
 import userEvent from "@testing-library/user-event";
 import { render, screen, waitFor } from "../../utils/testUtils";
 import { Customer } from "./Customer";
+import { v4 as uuidv4 } from 'uuid';
 
 const customer = {
-  id: 1,
+  id: uuidv4(),
   firstName: "Test",
   lastName: "Tester",
   phoneNumber: "00000000",
