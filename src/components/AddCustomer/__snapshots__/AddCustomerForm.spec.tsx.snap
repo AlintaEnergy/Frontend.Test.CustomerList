@@ -47,7 +47,7 @@ exports[`<AddCustomerForm /> should render a <AddCustomerForm /> 1`] = `
       value=""
     />
     <button
-      class="sc-hKFxyN jrRSci"
+      class="sc-hKFxyN FGdaA"
       type="submit"
     >
       Add Customer

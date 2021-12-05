@@ -12,7 +12,6 @@ describe('<AddCustomerForm />', () => {
     expect(wrapper.container).toMatchSnapshot();
   });
 
-  //@TODO Add tests for entering data and clicking submit
   it('should render 3 input fields', () => {
     render(<AddCustomerForm saveCustomer={saveCustomer} />);
     expect(screen.getAllByRole('textbox').length).toEqual(3);
