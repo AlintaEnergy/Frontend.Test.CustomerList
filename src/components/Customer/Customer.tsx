@@ -1,6 +1,4 @@
 import * as React from "react";
-import { Dispatch } from "redux";
-import { useDispatch } from "react-redux";
 import { ICustomer } from "../../types/types";
 import {
   StyledCustomer,

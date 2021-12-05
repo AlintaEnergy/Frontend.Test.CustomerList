@@ -1,7 +1,7 @@
 import userEvent from "@testing-library/user-event";
 import { render, screen, waitFor } from "../../utils/testUtils";
 import { Customer } from "./Customer";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 
 const customer = {
   id: uuidv4(),
@@ -12,7 +12,7 @@ const customer = {
 
 describe("<Customer />", () => {
   const deleteCustomer = jest.fn();
-  
+
   afterEach(() => {
     jest.clearAllMocks();
   });
@@ -26,15 +26,19 @@ describe("<Customer />", () => {
 
   it("should render the customer details that matches mock customer's details", () => {
     render(<Customer customer={customer} deleteCustomer={deleteCustomer} />);
-    expect(screen.getByRole('heading')).toHaveTextContent('Test Tester');
-    expect(screen.getByText(/Phone number: /)).toHaveTextContent("Phone number: 00000000");
+    expect(screen.getByRole("heading")).toHaveTextContent("Test Tester");
+    expect(screen.getByText(/Phone number: /)).toHaveTextContent(
+      "Phone number: 00000000"
+    );
   });
 
   it("should render a delete button", () => {
     render(<Customer customer={customer} deleteCustomer={deleteCustomer} />);
-    expect(screen.getByRole("button", {
-      name:"Delete"
-    })).toBeVisible();
+    expect(
+      screen.getByRole("button", {
+        name: "Delete",
+      })
+    ).toBeVisible();
   });
 
   it("should call deleteCustomer when delete is clicked", async () => {
@@ -43,5 +47,5 @@ describe("<Customer />", () => {
     await waitFor(() => {
       expect(deleteCustomer).toHaveBeenCalledWith(customer);
     });
-  })
+  });
 });
