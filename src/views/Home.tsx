@@ -1,10 +1,10 @@
 import * as React from "react";
 import { useSelector, shallowEqual, useDispatch } from "react-redux";
 import { Customer } from "../components/Customer/Customer";
-import { AddCustomerForm } from "../components/AddCustomer/AddCustomerForm";
 import { Dispatch } from "redux";
 import { CustomerState, ICustomer } from "../types/types";
 import { addCustomer, removeCustomer } from "../redux/actions/customerActions";
+import { CustomerFormContainer } from "../components/accordion/CustomerFormContainer";
 
 const Home: React.FC = () => {
   const customers: readonly ICustomer[] = useSelector(
@@ -21,7 +21,7 @@ const Home: React.FC = () => {
 
   return (
     <>
-      <AddCustomerForm saveCustomer={saveCustomer} />
+      <CustomerFormContainer onSave={saveCustomer} />
       {customers.map((customer: ICustomer) => (
         <Customer
           key={customer.id}
