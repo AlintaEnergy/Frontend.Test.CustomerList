@@ -88,7 +88,7 @@ const Wrapper = styled.div<{
     min-height: 5rem;
     height: 100%;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     padding-left: 1rem;
     &-title {
       max-width: 44rem;
