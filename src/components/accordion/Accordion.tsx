@@ -85,7 +85,7 @@ const Wrapper = styled.div<{
   .header {
     display: flex;
     background-color: ${designVariables.palette.blue400};
-    min-height: 9.5rem;
+    min-height: 5rem;
     height: 100%;
     align-items: center;
     justify-content: space-around;
