@@ -25,4 +25,5 @@ export const StyledCustomerDelete = styled.button`
   border: none;
   border-radius: 4px;
   font-size: 16px;
+  cursor: pointer;
 `;

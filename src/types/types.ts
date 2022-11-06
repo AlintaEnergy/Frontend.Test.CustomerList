@@ -4,6 +4,11 @@ export interface Customer {
   phoneNumber: string;
 }
 
+export interface CustomerSearch {
+  fullName: string;
+  phoneNumber: string;
+}
+
 export interface ICustomer extends Customer {
   id: number;
 }
@@ -18,3 +23,15 @@ export type CustomerAction = {
 };
 
 export type DispatchType = (args: CustomerAction) => CustomerAction;
+
+export interface CustomerSort {
+  sortOption: CustomerSortOption
+}
+
+export enum CustomerSortOption {
+  None,
+  FirstName,
+  LastName,
+  PhoneNumber,
+}
+

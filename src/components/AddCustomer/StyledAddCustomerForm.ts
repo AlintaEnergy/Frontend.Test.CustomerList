@@ -5,7 +5,7 @@ export const StyledForm = styled(Form)`
   box-sizing: border-box;
   min-width: 100%;
   border: 1px solid #ccc;
-  margin: 0 1rem;
+  margin: 0.5em 1rem;
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -29,4 +29,12 @@ export const StyledAddButton = styled.button`
   border: none;
   border-radius: 4px;
   font-size: 16px;
+  cursor: pointer;
+  :disabled {
+    background-color: grey;
+    cursor: not-allowed;
+  }
+  :last-child {
+    margin-top: 1em;
+  }
 `;
