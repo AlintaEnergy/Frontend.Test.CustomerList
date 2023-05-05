@@ -5,6 +5,7 @@ import { AddCustomerForm } from "../components/AddCustomer/AddCustomerForm";
 import { Dispatch } from "redux";
 import { CustomerState, ICustomer } from "../types/types";
 import { addCustomer, removeCustomer } from "../redux/actions/customerActions";
+import { Toaster } from "react-hot-toast";
 
 const Home: React.FC = () => {
   const customers: readonly ICustomer[] = useSelector(
@@ -15,7 +16,9 @@ const Home: React.FC = () => {
   const dispatch: Dispatch<any> = useDispatch();
 
   const saveCustomer = React.useCallback(
-    (customer: ICustomer) => dispatch(addCustomer(customer)),
+    (customer: ICustomer) => {
+      dispatch(addCustomer(customer));
+    },
     [dispatch]
   );
 
@@ -29,6 +32,7 @@ const Home: React.FC = () => {
           removeCustomer={removeCustomer}
         />
       ))}
+      <Toaster />
     </>
   );
 };

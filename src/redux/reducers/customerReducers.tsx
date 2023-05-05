@@ -1,5 +1,6 @@
 import { CustomerAction, CustomerState, ICustomer } from "../../types/types";
 import { ADD_CUSTOMER, REMOVE_CUSTOMER } from "../actions/customerTypes";
+import toast from "react-hot-toast";
 
 export const initialState: CustomerState = {
   customers: [
@@ -7,22 +8,32 @@ export const initialState: CustomerState = {
       id: 1,
       firstName: "Charles",
       lastName: "Babbage",
-      phoneNumber: "0412 123 123",
+      email: "cb@test.com",
+      birthDate: "1791-12-26",
     },
     {
       id: 2,
       firstName: "Alan",
       lastName: "Turing",
-      phoneNumber: "(03) 9599 1234",
+      email: "at@test.com",
+      birthDate: "1912-06-23",
     },
     {
       id: 3,
       firstName: "Ada",
       lastName: "Lovelace",
-      phoneNumber: "+61 423 345 567",
+      email: "al@test.com",
+      birthDate: "1815-12-10",
     },
   ],
 };
+
+const notifyExists = () =>
+  toast("Customer already exists!", {
+    icon: "🙅",
+  });
+const notifySuccess = () => toast.success("Customer added !");
+const notifyDelete = () => toast.error("Customer Deleted!");
 
 export const customerReducer = (
   state: CustomerState = initialState,
@@ -34,16 +45,29 @@ export const customerReducer = (
         id: action.customer.id ?? Math.random(), // not really unique but it's just an example
         firstName: action.customer.firstName,
         lastName: action.customer.lastName,
-        phoneNumber: action.customer.phoneNumber,
+        email: action.customer.email,
+        birthDate: action.customer.birthDate,
       };
-      return {
-        ...state,
-        customers: state.customers.concat(newCustomer),
-      };
+
+      const customerExists = state.customers.find(
+        (customer) => customer.firstName === newCustomer.firstName
+      );
+
+      if (customerExists) {
+        notifyExists();
+        return state;
+      } else {
+        notifySuccess();
+        return {
+          ...state,
+          customers: state.customers.concat(newCustomer),
+        };
+      }
     case REMOVE_CUSTOMER:
       const updatedCustomers: ICustomer[] = state.customers.filter(
         (customer) => customer.id !== action.customer.id
       );
+      notifyDelete();
       return {
         ...state,
         customers: updatedCustomers,

@@ -6,6 +6,7 @@ export const StyledCustomer = styled.div`
   border: 1px solid #ccc;
   margin: 1rem;
   padding: 1rem;
+  border-radius: 4px;
 `;
 
 export const StyledCustomerName = styled.h2`
@@ -25,4 +26,5 @@ export const StyledCustomerDelete = styled.button`
   border: none;
   border-radius: 4px;
   font-size: 16px;
+  cursor: pointer;
 `;
