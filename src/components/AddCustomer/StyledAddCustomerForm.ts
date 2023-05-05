@@ -29,4 +29,12 @@ export const StyledAddButton = styled.button`
   border: none;
   border-radius: 4px;
   font-size: 16px;
+  cursor: pointer;
+`;
+
+export const StyledErrorDiv = styled.div`
+  color: red;
+  font-size: 16px;
+  margin: 0 0 1rem;
+  padding: 0;
 `;
