@@ -9,6 +9,7 @@ import {
     StyledAddButton,
     StyledErrorMessage,
 } from './StyledAddCustomerForm';
+import { NavLink } from 'react-router-dom';
 
 const AddCustomerSchema = Yup.object().shape({
     firstName: Yup.string().required('Required'),
@@ -19,6 +20,7 @@ const AddCustomerSchema = Yup.object().shape({
             excludeEmptyString: true,
         })
         .required('Required'),
+    birthday: Yup.date().max(new Date(), 'Invalid date'),
 });
 
 type Props = {
@@ -26,6 +28,8 @@ type Props = {
 };
 
 export const AddCustomerForm: React.FC<Props> = ({ saveCustomer }) => {
+    const [message, setMessage] = React.useState('');
+
     return (
         <Formik
             initialValues={{
@@ -40,6 +44,7 @@ export const AddCustomerForm: React.FC<Props> = ({ saveCustomer }) => {
             ) => {
                 saveCustomer(values);
                 setSubmitting(false);
+                setMessage('User added');
             }}
         >
             {({ errors, touched }) => (
@@ -88,10 +93,37 @@ export const AddCustomerForm: React.FC<Props> = ({ saveCustomer }) => {
                             {errors.phoneNumber}
                         </StyledErrorMessage>
                     ) : null}
+                    <StyledLabel htmlFor='birthday'>Birthday</StyledLabel>
+                    <Field
+                        as={StyledInput}
+                        id='birthday'
+                        name='birthday'
+                        placeholder='01/01/2000'
+                        type='date'
+                    />
+                    {errors.birthday && touched.birthday ? (
+                        <StyledErrorMessage>
+                            {errors.birthday}
+                        </StyledErrorMessage>
+                    ) : null}
 
-                    <StyledAddButton type='submit'>
-                        Add Customer
-                    </StyledAddButton>
+                    <span style={{ color: 'green' }}>{message}</span>
+                    <div
+                        style={{
+                            display: 'flex',
+                            justifyContent: 'space-evenly',
+                        }}
+                    >
+                        <NavLink to='/'>
+                            <StyledAddButton type='button'>
+                                Back
+                            </StyledAddButton>
+                        </NavLink>
+
+                        <StyledAddButton type='submit'>
+                            Add Customer
+                        </StyledAddButton>
+                    </div>
                 </StyledForm>
             )}
         </Formik>
