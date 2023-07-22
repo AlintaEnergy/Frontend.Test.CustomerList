@@ -10,7 +10,7 @@ export interface ICustomer extends Customer {
 }
 
 export type CustomerState = {
-  customers: ICustomer[];
+  customers: { [id: string]: ICustomer };
 };
 
 export type CustomerAction = {

@@ -4,54 +4,87 @@ exports[`<AddCustomerForm /> should render a <AddCustomerForm /> 1`] = `
 <div>
   <form
     action="#"
-    class="sc-aXZVg hRecuN"
+    class="sc-aXZVg NgUjJ"
   >
     <label
-      class="sc-gEvEer eIdRVW"
+      class="sc-gEvEer cJUhzO"
       for="firstName"
     >
       First Name
     </label>
     <input
-      class="sc-eqUAAy ksPlaM"
+      class="sc-eqUAAy BXhUo"
       id="firstName"
       name="firstName"
       placeholder="John"
       value=""
     />
     <label
-      class="sc-gEvEer eIdRVW"
+      class="sc-gEvEer cJUhzO"
       for="lastName"
     >
       Last Name
     </label>
     <input
-      class="sc-eqUAAy ksPlaM"
+      class="sc-eqUAAy BXhUo"
       id="lastName"
       name="lastName"
       placeholder="Doe"
       value=""
     />
     <label
-      class="sc-gEvEer eIdRVW"
+      class="sc-gEvEer cJUhzO"
       for="phoneNumber"
     >
       Phone Number
     </label>
     <input
-      class="sc-eqUAAy ksPlaM"
+      class="sc-eqUAAy BXhUo"
       id="phoneNumber"
       name="phoneNumber"
-      placeholder="john@acme.com"
+      placeholder="0412345678"
       type="tel"
       value=""
     />
-    <button
-      class="sc-fqkvVR hWGKdi"
-      type="submit"
+    <label
+      class="sc-gEvEer cJUhzO"
+      for="birthday"
     >
-      Add Customer
-    </button>
+      Birthday
+    </label>
+    <input
+      class="sc-eqUAAy BXhUo"
+      id="birthday"
+      name="birthday"
+      placeholder="01/01/2000"
+      type="date"
+      value=""
+    />
+    <span
+      style="color: green;"
+    />
+    <div
+      style="display: flex; justify-content: space-evenly;"
+    >
+      <a
+        aria-current="page"
+        class="active"
+        href="/"
+      >
+        <button
+          class="sc-fqkvVR igBLMC"
+          type="button"
+        >
+          Back
+        </button>
+      </a>
+      <button
+        class="sc-fqkvVR igBLMC"
+        type="submit"
+      >
+        Add Customer
+      </button>
+    </div>
   </form>
 </div>
 `;

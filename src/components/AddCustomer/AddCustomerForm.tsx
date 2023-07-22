@@ -84,7 +84,7 @@ export const AddCustomerForm: React.FC<Props> = ({ saveCustomer }) => {
                         as={StyledInput}
                         id='phoneNumber'
                         name='phoneNumber'
-                        placeholder='john@acme.com'
+                        placeholder='0412345678'
                         type='tel'
                     />
 

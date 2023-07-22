@@ -7,10 +7,10 @@ import CustomerTable from "../components/CustomerTable/CustomerTable";
 import { Columns } from "../components/CustomerTable/Columns";
 
 const Home: React.FC = () => {
-  const customers: readonly ICustomer[] = useSelector(
+  const customers: readonly ICustomer[] =  Object.values(useSelector(
     (state: CustomerState) => state.customers,
     shallowEqual
-  );
+  ));
 
   const dispatch: Dispatch<any> = useDispatch();
 
