@@ -5,6 +5,8 @@ import { AddCustomerForm } from "../components/AddCustomer/AddCustomerForm";
 import { Dispatch } from "redux";
 import { CustomerState, ICustomer } from "../types/types";
 import { addCustomer, removeCustomer } from "../redux/actions/customerActions";
+import CustomerTable from "../components/CustomerTable/CustomerTable";
+import { Columns } from "../components/CustomerTable/Columns";
 
 const Home: React.FC = () => {
   const customers: readonly ICustomer[] = useSelector(
@@ -18,10 +20,15 @@ const Home: React.FC = () => {
     (customer: ICustomer) => dispatch(addCustomer(customer)),
     [dispatch]
   );
+  const deleteCustomer = React.useCallback(
+    (customer: ICustomer) => dispatch(removeCustomer(customer)),
+    [dispatch]
+);
 
   return (
     <>
       <AddCustomerForm saveCustomer={saveCustomer} />
+      <CustomerTable columns={Columns(deleteCustomer)} data={customers.slice()}/>
       {customers.map((customer: ICustomer) => (
         <Customer
           key={customer.id}
