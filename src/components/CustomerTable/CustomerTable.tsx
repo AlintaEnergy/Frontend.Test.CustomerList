@@ -113,7 +113,6 @@ export default function CustomerTable<TData, TValue>({
                             <StyledCustomerTableRow>
                                 <StyledCustomerTableCell
                                     colSpan={columns.length}
-                                    className='h-24 text-center'
                                 >
                                     No results.
                                 </StyledCustomerTableCell>
