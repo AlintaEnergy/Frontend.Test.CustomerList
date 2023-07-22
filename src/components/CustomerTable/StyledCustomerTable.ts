@@ -78,7 +78,7 @@ export const StyledCustomerTablePaginationButton = styled.button`
 `;
 
 export const StyledCustomerTableAddButton = styled.button`
-  padding: 1rem;
+  padding: 0.8rem;
   background-color: rgb(4, 121, 205);
   color: white;
   border: none;
@@ -87,7 +87,6 @@ export const StyledCustomerTableAddButton = styled.button`
 `;
 
 export const StyledCustomerTableInput = styled.input`
-  margin: 0 0 1rem;
   padding: 0.5rem;
   font-size: 16px;
 `;
