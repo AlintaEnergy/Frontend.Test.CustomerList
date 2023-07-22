@@ -4,42 +4,42 @@ exports[`<AddCustomerForm /> should render a <AddCustomerForm /> 1`] = `
 <div>
   <form
     action="#"
-    class="sc-bdnxRM hrMVqk"
+    class="sc-aXZVg hRecuN"
   >
     <label
-      class="sc-gtsrHT bmgxMS"
+      class="sc-gEvEer eIdRVW"
       for="firstName"
     >
       First Name
     </label>
     <input
-      class="sc-dlnjwi fstXny"
+      class="sc-eqUAAy ksPlaM"
       id="firstName"
       name="firstName"
       placeholder="John"
       value=""
     />
     <label
-      class="sc-gtsrHT bmgxMS"
+      class="sc-gEvEer eIdRVW"
       for="lastName"
     >
       Last Name
     </label>
     <input
-      class="sc-dlnjwi fstXny"
+      class="sc-eqUAAy ksPlaM"
       id="lastName"
       name="lastName"
       placeholder="Doe"
       value=""
     />
     <label
-      class="sc-gtsrHT bmgxMS"
+      class="sc-gEvEer eIdRVW"
       for="phoneNumber"
     >
       Phone Number
     </label>
     <input
-      class="sc-dlnjwi fstXny"
+      class="sc-eqUAAy ksPlaM"
       id="phoneNumber"
       name="phoneNumber"
       placeholder="john@acme.com"
@@ -47,7 +47,7 @@ exports[`<AddCustomerForm /> should render a <AddCustomerForm /> 1`] = `
       value=""
     />
     <button
-      class="sc-hKFxyN jrRSci"
+      class="sc-fqkvVR hWGKdi"
       type="submit"
     >
       Add Customer
