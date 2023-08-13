@@ -6,13 +6,29 @@ import {
   StyledInput,
   StyledLabel,
   StyledAddButton,
+  StyledCancelButton,
 } from "./StyledAddCustomerForm";
+import { addCustomer } from "../../redux/actions/customerActions";
+import { Dispatch } from "redux";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 
-type Props = {
-  saveCustomer: (customer: ICustomer | any) => void;
-};
+export const AddCustomerForm: React.FC = () => {
+  let history = useHistory();
+  const dispatch: Dispatch<any> = useDispatch();
 
-export const AddCustomerForm: React.FC<Props> = ({ saveCustomer }) => {
+  const saveCustomer = React.useCallback(
+    (customer: ICustomer | any) => {
+      dispatch(addCustomer(customer));
+      history.push("/");
+    },
+    [dispatch]
+  );
+
+  const cancel = () => {
+    history.push("/");
+  }
+
   return (
     <Formik
       initialValues={{
@@ -55,6 +71,7 @@ export const AddCustomerForm: React.FC<Props> = ({ saveCustomer }) => {
         />
 
         <StyledAddButton type="submit">Add Customer</StyledAddButton>
+        <StyledCancelButton onClick={cancel}>Cancel</StyledCancelButton>
       </StyledForm>
     </Formik>
   );

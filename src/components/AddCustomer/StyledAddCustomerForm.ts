@@ -30,3 +30,20 @@ export const StyledAddButton = styled.button`
   border-radius: 4px;
   font-size: 16px;
 `;
+
+export const StyledCancelButton = styled.button`
+  padding: 1rem;
+  background-color: gray;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 5px
+`;
+
+export const StyledError = styled.div`
+  float: right;
+  font-size: 14px;
+  color: red;
+`;
