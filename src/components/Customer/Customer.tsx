@@ -30,6 +30,9 @@ export const Customer: React.FC<Props> = ({ customer, removeCustomer }) => {
       <StyledCustomerInfo>
         Phone number: {customer.phoneNumber}
       </StyledCustomerInfo>
+      <StyledCustomerInfo>
+        Birthday: {customer.birthday}
+      </StyledCustomerInfo>
       <StyledCustomerDelete onClick={() => deleteCustomer(customer)}>
         Delete
       </StyledCustomerDelete>

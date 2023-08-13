@@ -27,7 +27,7 @@ export const AddCustomerForm: React.FC = () => {
 
   const cancel = () => {
     history.push("/");
-  }
+  };
 
   return (
     <Formik
@@ -35,6 +35,7 @@ export const AddCustomerForm: React.FC = () => {
         firstName: "",
         lastName: "",
         phoneNumber: "",
+        birthday: "",
       }}
       onSubmit={(
         values: Customer,
@@ -68,6 +69,14 @@ export const AddCustomerForm: React.FC = () => {
           name="phoneNumber"
           placeholder="john@acme.com"
           type="tel"
+        />
+
+        <Field
+          as={StyledInput}
+          id="birthday"
+          name="birthday"
+          placeholder="DD/MM/YYYY"
+          type="date"
         />
 
         <StyledAddButton type="submit">Add Customer</StyledAddButton>
