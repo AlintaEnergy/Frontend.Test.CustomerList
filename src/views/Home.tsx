@@ -36,18 +36,16 @@ const Home: React.FC = () => {
   );
 
   const colDefs: ColDef<ICustomer | any>[] = [
-    { field: "firstName", ...filterConfig },
-    { field: "lastName", ...filterConfig },
-    { field: "phoneNumber", ...filterConfig },
-    { field: "birthday", ...filterConfig },
+    { field: "firstName", ...filterConfig, sortable: true },
+    { field: "lastName", ...filterConfig, sortable: true },
+    { field: "phoneNumber", ...filterConfig, sortable: true },
+    { field: "birthday", ...filterConfig, sortable: true },
     { field: "", cellRenderer: ButtonCellRenderer}
   ];
 
   const onFirstDataRendered = React.useCallback((params) => {
     gridRef?.current?.api.sizeColumnsToFit();
   }, []);
-
-  const [rowData, setRowData] = React.useState<ICustomer[]>(customers);
 
   return (
     <>
@@ -64,7 +62,7 @@ const Home: React.FC = () => {
       >
         <AgGridReact<ICustomer>
           ref={gridRef}
-          rowData={rowData}
+          rowData={customers}
           columnDefs={colDefs}
           onFirstDataRendered={onFirstDataRendered}
         ></AgGridReact>
