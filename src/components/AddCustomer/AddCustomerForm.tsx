@@ -1,6 +1,6 @@
 import { Field, Formik, FormikHelpers } from "formik";
 import * as React from "react";
-import { ICustomer, Customer } from "../../types/types";
+import { ICustomer, Customer, CustomerState } from "../../types/types";
 import {
   StyledForm,
   StyledInput,
@@ -11,7 +11,7 @@ import {
 } from "./StyledAddCustomerForm";
 import { addCustomer } from "../../redux/actions/customerActions";
 import { Dispatch } from "redux";
-import { useDispatch } from "react-redux";
+import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import * as Yup from "yup";
 
@@ -34,10 +34,22 @@ export const AddCustomerForm: React.FC = () => {
   let history = useHistory();
   const dispatch: Dispatch<any> = useDispatch();
 
+  const customers: ICustomer[] = useSelector(
+    (state: CustomerState) => state.customers,
+    shallowEqual
+  );
+
   const saveCustomer = React.useCallback(
     (customer: ICustomer | any) => {
-      dispatch(addCustomer(customer));
-      history.push("/");
+      let isCustomerFound = customers.find(cust => cust.firstName === customer.firstName && cust.lastName === customer.lastName && cust.phoneNumber === customer.phoneNumber)
+      if(!isCustomerFound) {
+        dispatch(addCustomer(customer));
+        history.push("/");
+      } else {
+        alert('Customer already exist')
+      }
+      
+      
     },
     [dispatch]
   );
