@@ -7,11 +7,28 @@ import {
   StyledLabel,
   StyledAddButton,
   StyledCancelButton,
+  StyledError,
 } from "./StyledAddCustomerForm";
 import { addCustomer } from "../../redux/actions/customerActions";
 import { Dispatch } from "redux";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
+import * as Yup from "yup";
+
+const CustomerSchema = Yup.object().shape({
+  firstName: Yup.string()
+    .min(2, "Too Short!")
+    .max(50, "Too Long!")
+    .required("Required"),
+  lastName: Yup.string()
+    .min(2, "Too Short!")
+    .max(50, "Too Long!")
+    .required("Required"),
+  phoneNumber: Yup.string()
+    .matches(/^(\(0[1-9]\)|0[1-9])?( ?-?[0-9]){10,10}$/, "Invalid phone number")
+    .required("Required"),
+  birthday: Yup.date().required("Required"),
+});
 
 export const AddCustomerForm: React.FC = () => {
   let history = useHistory();
@@ -37,6 +54,7 @@ export const AddCustomerForm: React.FC = () => {
         phoneNumber: "",
         birthday: "",
       }}
+      validationSchema={CustomerSchema}
       onSubmit={(
         values: Customer,
         { setSubmitting }: FormikHelpers<Customer>
@@ -45,43 +63,68 @@ export const AddCustomerForm: React.FC = () => {
         setSubmitting(false);
       }}
     >
-      <StyledForm>
-        <StyledLabel htmlFor="firstName">First Name</StyledLabel>
-        <Field
-          as={StyledInput}
-          id="firstName"
-          name="firstName"
-          placeholder="John"
-        />
+      {({ errors, touched }) => (
+        <StyledForm>
+          <StyledLabel htmlFor="firstName">
+            First Name*{" "}
+            {errors.firstName && touched.firstName ? (
+              <StyledError>{errors.firstName}</StyledError>
+            ) : null}
+          </StyledLabel>
+          <Field
+            as={StyledInput}
+            id="firstName"
+            name="firstName"
+            placeholder="John"
+          />
 
-        <StyledLabel htmlFor="lastName">Last Name</StyledLabel>
-        <Field
-          as={StyledInput}
-          id="lastName"
-          name="lastName"
-          placeholder="Doe"
-        />
+          <StyledLabel htmlFor="lastName">
+            Last Name*{" "}
+            {errors.lastName && touched.lastName ? (
+              <StyledError>{errors.lastName}</StyledError>
+            ) : null}
+          </StyledLabel>
+          <Field
+            as={StyledInput}
+            id="lastName"
+            name="lastName"
+            placeholder="Doe"
+          />
 
-        <StyledLabel htmlFor="phoneNumber">Phone Number</StyledLabel>
-        <Field
-          as={StyledInput}
-          id="phoneNumber"
-          name="phoneNumber"
-          placeholder="john@acme.com"
-          type="tel"
-        />
+          <StyledLabel htmlFor="phoneNumber">
+            Phone Number*{" "}
+            {errors.phoneNumber && touched.phoneNumber ? (
+              <StyledError>{errors.phoneNumber}</StyledError>
+            ) : null}
+          </StyledLabel>
 
-        <Field
-          as={StyledInput}
-          id="birthday"
-          name="birthday"
-          placeholder="DD/MM/YYYY"
-          type="date"
-        />
+          <Field
+            as={StyledInput}
+            id="phoneNumber"
+            name="phoneNumber"
+            placeholder="03 333 333 333"
+            type="tel"
+          />
 
-        <StyledAddButton type="submit">Add Customer</StyledAddButton>
-        <StyledCancelButton onClick={cancel}>Cancel</StyledCancelButton>
-      </StyledForm>
+          <StyledLabel htmlFor="birthday">
+            Birthday*{" "}
+            {errors.birthday && touched.birthday ? (
+              <StyledError>{errors.birthday}</StyledError>
+            ) : null}
+          </StyledLabel>
+
+          <Field
+            as={StyledInput}
+            id="birthday"
+            name="birthday"
+            placeholder="DD/MM/YYYY"
+            type="date"
+          />
+
+          <StyledAddButton type="submit">Add Customer</StyledAddButton>
+          <StyledCancelButton onClick={cancel}>Cancel</StyledCancelButton>
+        </StyledForm>
+      )}
     </Formik>
   );
 };
