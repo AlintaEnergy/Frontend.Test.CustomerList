@@ -19,7 +19,8 @@ export const StyledCustomerInfo = styled.p`
 `;
 
 export const StyledCustomerDelete = styled.button`
-  padding: 1rem;
+  padding: 6px;
+  height: 30px;
   background-color: #dc1616;
   color: white;
   border: none;

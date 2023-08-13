@@ -2,6 +2,7 @@ import * as React from "react";
 import { StyledMain, StyledHeader, StyledHeaderText } from "./StyledApp";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./views/Home";
+import { AddCustomerForm } from "./components/AddCustomer/AddCustomerForm";
 
 const App: React.FC = () => {
   return (
@@ -11,8 +12,11 @@ const App: React.FC = () => {
       </StyledHeader>
       <Router>
         <Switch>
-          <Route path="/">
+        <Route exact path="/">
             <Home />
+          </Route>
+          <Route exact path="/addCustomer">
+            <AddCustomerForm />
           </Route>
         </Switch>
       </Router>
