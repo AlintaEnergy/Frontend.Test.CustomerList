@@ -76,6 +76,8 @@ export const AddCustomerForm: React.FC = () => {
             id="firstName"
             name="firstName"
             placeholder="John"
+            aria-label={'First Name'}
+            aria-required="true"
           />
 
           <StyledLabel htmlFor="lastName">
@@ -89,6 +91,8 @@ export const AddCustomerForm: React.FC = () => {
             id="lastName"
             name="lastName"
             placeholder="Doe"
+            aria-label={'Last Name'}
+            aria-required="true"
           />
 
           <StyledLabel htmlFor="phoneNumber">
@@ -104,6 +108,8 @@ export const AddCustomerForm: React.FC = () => {
             name="phoneNumber"
             placeholder="03 333 333 333"
             type="tel"
+            aria-label={'Phone'}
+            aria-required="true"
           />
 
           <StyledLabel htmlFor="birthday">
@@ -119,6 +125,8 @@ export const AddCustomerForm: React.FC = () => {
             name="birthday"
             placeholder="DD/MM/YYYY"
             type="date"
+            aria-label={'Birthday'}
+            aria-required="true"
           />
 
           <StyledAddButton type="submit">Add Customer</StyledAddButton>
